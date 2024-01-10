@@ -1,4 +1,4 @@
 # EShop-Software-Engineering-Principles
 
-### Shelton Tool Hire System built with Python & Django
+#### Shelton tool hire built with Python & Django, HTML, CSS & Bootstrap.
 
