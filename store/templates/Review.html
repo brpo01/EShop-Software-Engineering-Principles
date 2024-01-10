@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="card" ,style="width: 18rem;">
+  <div class="col-lg-9 mx-auto" >
+    <h5 class="card-title">Add your Review</h5>
+       <form action="/ReviewSubmitted" method="POST">
+           {% csrf_token %}
+           <label for="comment">Your Comments about product:</label>
+           <input type="text" id="comment" name="comment"><br><br>
+           <label for ="Rate"> Rate out of 5: </label>
+           <input type="text" id="rate" name="rate"><br><br>
+           <input type="submit" value="Submit">
+       </form>
+
+  </div>
+</div>
+<div id='reviews' class="col-lg-6 mx-auto">
+    <div class="row mx-auto">
+    {% for review in reviews%}
+    <div class="card mx-auto mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <p class="card-text">{{review.comments}}</p>
+      <p class="card-text"> rate out of 5:   {{review.rating}}</p>
+  </div>
+</div>
+{% endfor %}
+    </div>
+{% endblock %}
+
+</div>
